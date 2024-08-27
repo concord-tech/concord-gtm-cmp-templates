@@ -1,0 +1,6 @@
+homepage: "https://concord.tech"
+documentation: "https://concord.tech/docs"
+versions:
+  # Latest version
+  - sha:
+    changeNotes: Initial Version.
