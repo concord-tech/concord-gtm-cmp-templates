@@ -2,5 +2,8 @@ homepage: "https://concord.tech"
 documentation: "https://concord.tech/docs"
 versions:
   # Latest version
-  - sha:
+  - sha: 49828886ca905235656eb7eddb07b04769bf6629
+    changeNotes: Added encodeUri to inject script logic.
+  # Older versions
+  - sha: f08dee4c70155ec389b986b61860c043d8443fab
     changeNotes: Initial Version.
