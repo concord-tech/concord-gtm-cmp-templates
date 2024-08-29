@@ -348,6 +348,7 @@ const gtagSet = require('gtagSet');
 const JSON = require('JSON');
 const Object = require('Object');
 const injectScript = require('injectScript');
+const encodeUri = require('encodeUri');
 const concordProjectId = data.projectId;
 const injectConcordScript = data.injectConcordScript;
 const concordKey = 'concord-allow-state-' + concordProjectId;
@@ -447,7 +448,7 @@ const main = (data) => {
   };
   
   if (injectConcordScript === true) {
-    const url = 'https://' + concordDomain + '/site-v1/'+concordProjectId+'/site-client';
+    const url = 'https://' + encodeUri(concordDomain + '/site-v1/'+concordProjectId+'/site-client');
     injectScript(url, onInjectSuccess, onInjectFailure, 'concord');
   } else {
     data.gtmOnSuccess();
