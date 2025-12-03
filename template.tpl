@@ -397,8 +397,14 @@ const main = (data) => {
         'security_storage': settings.securityStorage,
         'ad_user_data': settings.adUserData,
         'ad_personalization': settings.adPersonalization,
-        'wait_for_update': 500,
+        'wait_for_update': data.waitForUpdate || 500,
       };
+      
+      // Add region if specified
+      if (settings.region && settings.region.length > 0) {
+        defaultData.region = splitInput(settings.region);
+      }
+
       setDefaultConsentState(defaultData);
     });
   } else {
@@ -410,7 +416,7 @@ const main = (data) => {
       'security_storage': 'granted',
       'ad_user_data': 'denied',
       'ad_personalization': 'denied',
-      'wait_for_update': 500,
+      'wait_for_update': data.waitForUpdate || 500,
      });
   }  
 
